@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="modal">
+        <div class="modal__form">
+            <div class="modal__close"></div>
+            <div>
+                <label for="title">Название:</label>
+                <input type="text" name="title" id="title">
+            </div>
+            <div>
+                <label for="author">Автор:</label>
+                <input type="text" name="author" id="author">
+            </div>
+            <div>
+                <label for="year">Год издания:</label>
+                <input type="text" name="year" id="year">
+            </div>
+            <div>
+                <label for="genre">Жанр:</label>
+                <input type="text" name="genre" id="genre">
+            </div>
+            <div>
+                <input type="checkbox" name="read" id="read">
+                <label for="read">Прочитано</label>
+            </div>
+            <button class="book__btn" id="addBook">Добавить книгу</button>
+        </div>
+    </div>
+    <header class="header">
+        <div class="logo"></div>
+        <button class="btn" id="add">Добавить книгу</button>
+        <button class="btn" id="removeAll">Удалить все книги</button>
+        <button class="btn" id="refresh">Обновить страницу</button>
+    </header>
+    <main class="main">
+    </main>
+    <footer class="footer">
+        <div class="btns">
+            <button class="btn" id="filterGenre">Фильтр по жанру</button>
+            <button class="btn" id="readBook">Прочитанные книги</button>
+            <button class="btn" id="unreadBook">Не прочитанные книги</button>
+        </div>
+        <span id="score"></span>
+    </footer>
+    <script type="module" src="./js/script.js"></script>
+</body>
+
+</html>
