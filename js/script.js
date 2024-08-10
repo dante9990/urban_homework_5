@@ -52,7 +52,6 @@ addBookBtn.addEventListener('click', () => {
     modal.classList.remove('modal_active')
 })
 
-const allBooks = JSON.parse(localStorage.getItem('books'))
 
 function fitlerOnGenre(arr) {
     let genrePrompt = prompt('Введите жанр:', '')
@@ -88,14 +87,14 @@ function filterOnUnead(arr) {
 
 const filtGenreBtn = document.querySelector('#filterGenre')
 filtGenreBtn.addEventListener('click', () => {
-    fitlerOnGenre(allBooks)
+    fitlerOnGenre(books)
 })
 
 const filtReadBtn = document.querySelector('#readBook')
-filtReadBtn.addEventListener('click', () => { filterOnRead(allBooks) })
+filtReadBtn.addEventListener('click', () => { filterOnRead(books) })
 
 const filtUneadBtn = document.querySelector('#unreadBook')
-filtUneadBtn.addEventListener('click', () => { filterOnUnead(allBooks) })
+filtUneadBtn.addEventListener('click', () => { filterOnUnead(books) })
 
 if (booksGenre !== null) {
     footer.prepend(cancel)
@@ -119,10 +118,10 @@ if (booksGenre !== null) {
         main.append(article)
 
         const editBtn = article.querySelector('#edit')
-        editBtn.addEventListener('click', () => { openEditor(item, allBooks, index) })
+        editBtn.addEventListener('click', () => { openEditor(item, books, index) })
 
         const deleteBookBtn = article.querySelector('#delete')
-        deleteBookBtn.addEventListener('click', () => { deleteBook(allBooks, index) })
+        deleteBookBtn.addEventListener('click', () => { deleteBook(books, index) })
     });
 
 } else if (booksRead !== null) {
@@ -147,10 +146,10 @@ if (booksGenre !== null) {
         main.append(article)
 
         const editBtn = article.querySelector('#edit')
-        editBtn.addEventListener('click', () => { openEditor(item, allBooks, index) })
+        editBtn.addEventListener('click', () => { openEditor(item, books, index) })
 
         const deleteBookBtn = article.querySelector('#delete')
-        deleteBookBtn.addEventListener('click', () => { deleteBook(allBooks, index) })
+        deleteBookBtn.addEventListener('click', () => { deleteBook(books, index) })
     });
 } else if (booksUread !== null) {
     footer.prepend(cancel)
@@ -174,14 +173,14 @@ if (booksGenre !== null) {
         main.append(article)
 
         const editBtn = article.querySelector('#edit')
-        editBtn.addEventListener('click', () => { openEditor(item, allBooks, index) })
+        editBtn.addEventListener('click', () => { openEditor(item, books, index) })
 
         const deleteBookBtn = article.querySelector('#delete')
-        deleteBookBtn.addEventListener('click', () => { deleteBook(allBooks, index) })
+        deleteBookBtn.addEventListener('click', () => { deleteBook(books, index) })
     });
 }
 else {
-    allBooks.forEach((item, index) => {
+    books.forEach((item, index) => {
         const article = document.createElement('article')
         article.className = 'book'
         article.innerHTML = `
@@ -196,14 +195,14 @@ else {
         main.append(article)
 
         const editBtn = article.querySelector('#edit')
-        editBtn.addEventListener('click', () => { openEditor(item, allBooks, index) })
+        editBtn.addEventListener('click', () => { openEditor(item, books, index) })
 
         const deleteBookBtn = article.querySelector('#delete')
-        deleteBookBtn.addEventListener('click', () => { deleteBook(allBooks, index) })
+        deleteBookBtn.addEventListener('click', () => { deleteBook(books, index) })
     });
 }
 
 
 
 const score = document.querySelector('#score')
-score.innerHTML = `Количество книг в списке: ${allBooks.length}`
+score.innerHTML = `Количество книг в списке: ${books.length}`
